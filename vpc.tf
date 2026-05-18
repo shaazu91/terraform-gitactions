@@ -18,8 +18,6 @@ resource "aws_subnet" "public" {
   }
 }
 
-
-
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
    tags = {
@@ -45,9 +43,6 @@ resource "aws_internet_gateway" "main" {
     Name = "main-internet-gateway"
   }
 }
-
-
-
 
 resource "aws_instance" "web" {
   ami_id                 = "ami-07a00cf47dbbc844c" # Amazon Linux 2 (example)
