@@ -6,3 +6,4 @@ instance_type        = "t2.micro"
 vpc_cidr             = "10.2.0.0/16"
 public_subnet_cidrs  = ["10.2.1.0/24"]
 #private_subnet_cidrs = ["10.2.11.0/24"]
+ami_id                =  "ami-07a00cf47dbbc844c"
