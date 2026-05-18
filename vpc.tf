@@ -2,6 +2,7 @@ resource "aws_vpc" "main" {
   cidr_block           = var.vpc_cidr
   enable_dns_support   = true
   enable_dns_hostnames = true
+
   tags = {
     Name = "main-vpc-${var.environment}"
   }
@@ -13,6 +14,7 @@ resource "aws_subnet" "public" {
   cidr_block              = element(var.public_subnet_cidrs, count.index)
   availability_zone       = element(var.availability_zones, count.index)
   map_public_ip_on_launch = true
+
   tags = {
     Name = "public-subnet-${var.environment}-${count.index + 1}"
   }
@@ -20,7 +22,8 @@ resource "aws_subnet" "public" {
 
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
-   tags = {
+
+  tags = {
     Name = "public-route-table-${var.environment}"
   }
 }
@@ -39,6 +42,7 @@ resource "aws_route_table_association" "public" {
 
 resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
+
   tags = {
     Name = "main-internet-gateway"
   }
