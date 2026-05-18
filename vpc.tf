@@ -47,7 +47,7 @@ resource "aws_internet_gateway" "main" {
 resource "aws_instance" "web" {
   ami                = "ami-07a00cf47dbbc844c" # Amazon Linux 2 (example)
   instance_type          = "t2.micro"
-  subnet_id              = aws_subnet.public.id
+  subnet_id              = aws_subnet.public[0].id
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
   associate_public_ip_address = true
