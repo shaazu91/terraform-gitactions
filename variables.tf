@@ -22,18 +22,15 @@ variable "public_subnet_cidrs" {
   default     = ["10.0.1.0/24"]
 }
 
-
-
 variable "public_subnet_count" {
   description = "Number of public subnets to create"
   type        = number
   default     = 1
 }
 
-
 variable "availability_zones" {
   description = "List of availability zones"
   type        = list(string)
-  default     = ["ap-south-1a","ap-south-1b"]
+  default     = ["ap-south-1a", "ap-south-1b"]
 }
 
