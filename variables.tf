@@ -37,14 +37,3 @@ variable "availability_zones" {
   default     = ["ap-south-1"]
 }
 
-variable "ami_id" {
-  description = "AMI ID for EC2 instances"
-  type        = string
-  default     = "ami-07a00cf47dbbc844c" # Ubuntu 22.04 LTS
-}
-
-variable "instance_type" {
-  description = "The EC2 instance type"
-  type        = string
-  default     = "t2.micro"
-}
