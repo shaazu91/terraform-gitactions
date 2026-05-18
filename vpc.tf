@@ -50,7 +50,7 @@ resource "aws_internet_gateway" "main" {
 
 
 resource "aws_instance" "web" {
-  ami_id                    = "var.ami-id" # Amazon Linux 2 (example)
+  ami_id                 = "var.ami_id" # Amazon Linux 2 (example)
   instance_type          = "var.instance_type"
   subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
